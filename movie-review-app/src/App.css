@@ -1,38 +1,166 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*::selection {
+  background-color: white;
+  color: #202123;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: #202123;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.responsive-container {
+  width: 100%;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  object-fit: cover;
+}
+
+.card-holder {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 767px) {
+  .img-fluid {
+    max-height: 50vh;
   }
-  to {
-    transform: rotate(360deg);
+  .about-review {
+    max-width: 80%;
+    padding: 0 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.card-img {
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.card-img:hover {
+  filter: brightness(0.5);
+}
+
+.title {
+  color: white;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.review-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+
+.review-img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.about-review {
+  color: white;
+  max-width: 80%;
+  padding: 0 1rem;
+  margin-top: 1.5rem;
+}
+
+.about-review h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.about-review h4 {
+  margin-bottom: 2rem;
+}
+
+.about-review p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .review-container {
+    flex-direction: row;
+  }
+
+  .about-review {
+    max-width: 50%;
+    padding: 0 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .review-container {
+    flex-direction: column;
+  }
+
+  .review-container:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+  .about-review {
+    max-width: 80%;
+    padding: 0 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.footer-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-div {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.scrollUpBtn {
+  font-size: 20px;
+  background-color: white;
+  color: black;
+  width: 45px;
+  height: 45px;
+  opacity: 0.75;
+  border: 1px solid #e7eae8;
+  border-radius: 8px;
+  cursor: pointer;
+  animation: bounce_513 1s infinite;
+}
+
+@keyframes bounce_513 {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
